@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Solo TicTacToe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,54 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Welcome to Solo TicTacToe</h1>
+      <h2>blah blah blah</h2>
+  <p id='message'></p>
+    <section>
+      <form id="sign-up-form">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" placeholder="Email" name="credentials[email]">
+          <input type="password" placeholder="Password" name="credentials[password]">
+          <input type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <input type="submit" value="Sign Up">
+        </fieldset>
+      </form>
+    </section>
+
+
+      <section>
+        <form id="sign-in-form">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" placeholder="Email" name="credentials[email]">
+            <input type="password" placeholder="Password" name="credentials[password]">
+            <input type="submit" value="Sign In">
+          </fieldset>
+        </form>
+      </section>
+
+
+        <section>
+          <form id="change-pw-form">
+            <fieldset>
+              <legend>Change Password!</legend>
+              <input type="password" placeholder="Old Password" name="passwords[old]">
+              <input type="password" placeholder="New Password" name="passwords[new]">
+              <input type="submit" value="Update PW">
+            </fieldset>
+          </form>
+        </section>
+
+
+          <section>
+            <form id="sign-out-form">
+              <fieldset>
+                <legend>Sign Out!</legend>
+                <input type="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </section>
+
     </body>
 </html>
