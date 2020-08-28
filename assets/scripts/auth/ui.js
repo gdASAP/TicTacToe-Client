@@ -27,14 +27,14 @@ const onChangePwSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('changePasswordSuccess ran and nothing was returned!')
+  //console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
 const onChangePwFailure = function (error) {
   $('#message').text('Error on change password')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('changePasswordFailure ran. Error is :', error)
+  //console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const onSignOutSuccess = function () {
@@ -46,7 +46,7 @@ const onSignOutSuccess = function () {
   $('#sign-up-form').show()
   $('#sign-out-form').hide()
   $('#change-pw-form').hide()
-  console.log('signOutSuccess ran and nothing was returned!')
+  //console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 
@@ -54,7 +54,7 @@ const onSignOutFailure = function (error) {
   $('#message').text('Error on sign out')
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
+  //console.error('signOutFailure ran. Error is :', error)
 }
 
 
