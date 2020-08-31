@@ -15,9 +15,19 @@ console.log('start game API called')
   })
 }
 
-  const updateGame = function (currentGame) {
+  const updateGame = function () {
   console.log('update game API called', store.game._id)
-  console.log(currentGame)
+  const gameDelta = {
+  {
+     game: {
+    cell: {
+      index: 0,
+      value: "x"
+    },
+    over: false
+  }
+}
+ console.log(gameDelta)
   //console.log(url)
     return $.ajax({
       url: config.apiUrl + '/games/' + store.game._id,
@@ -25,18 +35,18 @@ console.log('start game API called')
       headers: {
         Authorization: 'Token token=' + store.user.token
       },
-      currentGame: currentGame
+      gameDelta: gameDelta
     })
 }
-    const showGame = function (currentGame) {
+    const showGame = function () {
+  console.log('show game API called', store.game._id)
       return $.ajax({
         url: config.apiUrl + '/games/' + store.game._id,
         method:'GET',
         headers: {
           Authorization: 'Token token=' + store.user.token
-        },
-        currentGame: currentGame
-    })
+        }
+      })
 
 }
   module.exports = {

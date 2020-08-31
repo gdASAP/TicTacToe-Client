@@ -34,10 +34,23 @@ const onUpdateGameFailure = function (error) {
   console.error('update Failure ran. Error is :', error)
 }
 
+const onShowGameSuccess = function (response) {
+  $('#message').text('Game Shown successfully')
+  console.log('response is: ', response)
+
+}
+
+const onShowGameFailure = function (error) {
+  $('#message').text('Board failed to show')
+  console.error('show Failure ran. Error is :', error)
+}
+
 
 module.exports = {
 onStartGameSuccess,
 onStartGameFailure,
 onUpdateGameSuccess,
-onUpdateGameFailure
+onUpdateGameFailure,
+onShowGameSuccess,
+onShowGameFailure
 }
