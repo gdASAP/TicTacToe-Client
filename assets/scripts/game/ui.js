@@ -5,7 +5,7 @@ const onStartGameSuccess = function (response) {
   store.game = response.game
   $('#message').text('Game Started successfully')
   console.log('response is: ', response)
-  // $('#message').removeClass()
+  $('.board').show()
   // $('#message').addClass('success')
   // $('form').trigger('reset')
   // $('#sign-in-form').show()

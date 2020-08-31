@@ -46,6 +46,7 @@ const onSignOutSuccess = function () {
   $('#sign-up-form').show()
   $('#sign-out-form').hide()
   $('#change-pw-form').hide()
+  $('.board').hide()
   //console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
