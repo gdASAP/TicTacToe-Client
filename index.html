@@ -13,12 +13,12 @@
     </head>
     <body>
       <h1>Welcome to Solo TicTacToe</h1>
-      <h2>blah blah blah</h2>
+      <h3>Play against yourself. You know the rules.</h3>
   <p id='message'></p>
     <section>
       <form id="sign-up-form">
         <fieldset>
-          <legend>Sign up!</legend>
+          <!-- <legend>Sign up!</legend> -->
           <input type="text" placeholder="Email" name="credentials[email]">
           <input type="password" placeholder="Password" name="credentials[password]">
           <input type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
@@ -31,7 +31,7 @@
       <section>
         <form id="sign-in-form">
           <fieldset>
-            <legend>Sign in!</legend>
+            <!-- <legend>Sign in!</legend> -->
             <input type="text" placeholder="Email" name="credentials[email]">
             <input type="password" placeholder="Password" name="credentials[password]">
             <input type="submit" value="Sign In">
@@ -39,11 +39,18 @@
         </form>
       </section>
 
+      <!-- <section>
+        <form id="manage-account-button">
+          <fieldset>
+            <input type="submit" value="Manage Account">
+          </fieldset>
+        </form>
+      </section> -->
 
         <section>
           <form id="change-pw-form">
             <fieldset>
-              <legend>Change Password!</legend>
+              <!-- <legend>Change Password!</legend> -->
               <input type="password" placeholder="Old Password" name="passwords[old]">
               <input type="password" placeholder="New Password" name="passwords[new]">
               <input type="submit" value="Update PW">
@@ -54,8 +61,8 @@
 
           <section>
             <form id="sign-out-form">
-              <fieldset>
-                <legend>Sign Out!</legend>
+              <!-- <fieldset>
+                <legend>Sign Out!</legend> -->
                 <input type="submit" value="Sign Out">
               </fieldset>
             </form>
@@ -64,11 +71,13 @@
           <section>
             <form id="start-game-button">
               <fieldset>
-                <legend>Start game</legend>
+                <!-- <legend>Start game</legend> -->
                 <input type="submit" value="Start Game">
               </fieldset>
             </form>
           </section>
+
+    <p id='gameMessage'></p>
 
         <section>
           <div class="board">
@@ -77,7 +86,7 @@
         </section>
 
         <!-- <section>
-          <form id="update-game-button">
+          <form id="account-settings">
             <fieldset>
               <legend>Update game board</legend>
               <input type="submit" value="Update Game">
@@ -85,14 +94,14 @@
           </form>
         </section> -->
 
-        <section>
+        <!-- <section>
           <form id="show-game-button">
             <fieldset>
-              <legend>Show game board</legend>
-              <input type="submit" value="Show Game">
+              <!-- <legend>Show game board</legend> -->
+              <!-- <input type="submit" value="Show Game">
             </fieldset>
           </form>
-        </section>
+        </section> -->
 
         <div class="container">
             <!-- Row and board are two different classes defined on the same line-->

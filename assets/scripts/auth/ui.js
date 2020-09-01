@@ -13,11 +13,11 @@ const onSignInSuccess = function(response) {
   store.user = response.user
   $('#message').text('Sign in Successful ' + response.user.email)
   $('#sign-in-form').trigger('reset')
-  $('#change-pw-form').show()
+  $('#change-pw-form').hide()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#sign-out-form').show()
-  console.log('user data is: ',store.user)
+  //console.log('user data is: ',store.user)
 }
 const onSignInFailure = function(error) {
 $('#message').text('Sign in failed. Try again ')

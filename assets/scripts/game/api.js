@@ -8,7 +8,7 @@ const ui = require('./ui')
 
 // startGame AJAX call
 const startGame = function (data) {
-console.log('start game API called')
+//console.log('start game API called')
   return $.ajax({
     url: config.apiUrl + '/games',
     method:'POST',
@@ -20,9 +20,11 @@ console.log('start game API called')
 }
 
 
-let currentPlayer = 'O'
+let currentPlayer = 'X'
 let currentIndex = ''
 let gameOver = false
+let newGame = true
+let callUpdate = false
 
 
 
@@ -30,27 +32,42 @@ let gameOver = false
 const onBoxClick = function (event) {
   // Select the box id that was clicked, event.target
   //change player
-  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+   //currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
   const box = $(event.target)
-  const cell = $(event.target.id)
-
   // Then set the text to the current player
-  box.text(currentPlayer)
   currentIndex = `${event.target.id}`
+  if (newGame) {
+    //add this for messaging
+    //  $('#gameMessage').text(`Player ` + `${currentPlayer}` + ` Make a selection.`)
+    box.text(currentPlayer)
+    newGame = false
+    callUpdate = true
+  } else {
+    console.log('testing', `${store.game.cells[currentIndex]}`)
+    if (store.game.cells[currentIndex] === '') {
+      box.text(currentPlayer)
+      callUpdate = true
+    }
+  }
   //gameData.game.cell.value = currentPlayer
   console.log('index is: ', currentIndex, 'current player: ', currentPlayer)
 //events.onUpdateGame()
+if (callUpdate && !gameOver) {
+  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
   updateGame()
-  .then(ui.onUpdateGameSuccess)
-  .catch(ui.onUpdateGameFailure)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+  //  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+} else {
+  $('#gameMessage').text('Invalid move. Try again.')
 }
-
+}
 
 
 //Update Game API
   const updateGame = function (data) {
-  console.log('update game API called', store.game._id)
-  console.log(currentIndex, currentPlayer)
+  //console.log('update game API called', store.game._id)
+  callUpdate = false
   console.log(data)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,

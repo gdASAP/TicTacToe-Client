@@ -6,7 +6,7 @@ const gameplay = require('./gameplay')
 
 const onStartGame = function (event) {
  event.preventDefault()
- console.log('Game Started')
+ //console.log('Game Started')
 api.startGame()
 .then(ui.onStartGameSuccess)
 .catch(ui.onStartGameFailure)
@@ -19,6 +19,7 @@ api.updateGame()
 .then(ui.onUpdateGameSuccess)
 .catch(ui.onUpdateGameFailure)
 }
+
 
 const onShowGame = function(event) {
   event.preventDefault()

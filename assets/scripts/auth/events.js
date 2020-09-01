@@ -18,7 +18,7 @@ const onSignIn = function (event) {
  event.preventDefault()
  const form = event.target
  const data = getFormFields(form)
- console.log ('the data is: ', data)
+ //console.log ('the data is: ', data)
 api.signIn(data)
 .then(ui.onSignInSuccess)
 .catch(ui.onSignInFailure)
@@ -29,7 +29,7 @@ const onChangePw = function (event) {
  event.preventDefault()
  const form = event.target
  const data = getFormFields(form)
- console.log('event data is: ', data)
+ //console.log('event data is: ', data)
 api.changePw(data)
 .then(ui.onChangePwSuccess)
 .catch(ui.onChangePwFailure)
@@ -37,7 +37,7 @@ api.changePw(data)
 
 const onSignOut = function (event) {
  event.preventDefault()
- console.log('sign out ran')
+ //console.log('sign out ran')
 api.signOut()
 .then(ui.onSignOutSuccess)
 .catch(ui.onSignOutFailure)

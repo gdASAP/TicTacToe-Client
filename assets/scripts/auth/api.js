@@ -23,8 +23,8 @@ const signIn = function (data) {
 
 // changePW AJAX call
 const changePw = function (data) {
-  console.log ('store user token is: ', store.user.token)
-  console.log ('password data is : ', data)
+  //console.log ('store user token is: ', store.user.token)
+  //console.log ('password data is : ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -37,7 +37,7 @@ const changePw = function (data) {
 
 // signOut AJAX call
 const signOut = function () {
-console.log('sign out ran for real')
+//console.log('sign out ran for real')
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method:'DELETE',

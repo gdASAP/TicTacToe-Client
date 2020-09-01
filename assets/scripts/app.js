@@ -16,6 +16,7 @@ $(() => {
   $('#change-pw-form').on('submit', authEvents.onChangePw)
   $('#sign-out-form').on('submit', authEvents.onSignOut)
   $('#start-game-button').on('submit', gameEvents.onStartGame)
+  $('#manage-account-button').on('submit', gameEvents.onManageAcct)
   //$('#update-game-button').on('submit', gameEvents.onUpdateGame)
   $('#show-game-button').on('submit', gameEvents.onShowGame)
   $('#0').on('click', gamePlay.onBoxClick)
