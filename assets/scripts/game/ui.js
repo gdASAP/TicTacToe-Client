@@ -1,4 +1,6 @@
 const store = require('./../store')
+const api = require('./api')
+
 
 
 const onStartGameSuccess = function (response) {
@@ -14,8 +16,10 @@ const onStartGameFailure = function (error) {
 
 const onUpdateGameSuccess = function (response) {
   $('#gameMessage').text('Valid move. Nice Job!')
-  console.log('response is: ', response)
+  //console.log('response is: ', response)
   store.game = response.game
+  //api.gameOverCheck()
+
 }
 
 const onUpdateGameFailure = function (error) {
