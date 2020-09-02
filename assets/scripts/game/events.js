@@ -6,7 +6,19 @@ const gameplay = require('./gameplay')
 
 const onStartGame = function (event) {
  event.preventDefault()
- //console.log('Game Started')
+$('#0').text('')
+$('#1').text('')
+$('#2').text('')
+$('#3').text('')
+$('#4').text('')
+$('#5').text('')
+$('#6').text('')
+$('#7').text('')
+$('#8').text('')
+$('#gameMessage').text('')
+store.newGame = true
+store.gameOver = false
+//console.log('new game ', newGame)
 api.startGame()
 .then(ui.onStartGameSuccess)
 .catch(ui.onStartGameFailure)
@@ -28,30 +40,26 @@ const onShowGame = function(event) {
   .catch(ui.onShowGameFailure)
 }
 
-// let currentPlayer = '✕'
-// let currentMove = ''
-// // Our box click event handler
-// const onBoxClick = function (event) {
-//   // Select the box id that was clicked, event.target
-//   const box = $(event.target)
-//   const cell = $(event.target.id)
-//
-//   // Then set the text to the current player
-//   box.text(currentPlayer)
-//   let index = `${event.target.id}`
-//   console.log('index is: ', index, 'current player: ', currentPlayer)
-//
-//   // Change the current player
-//   currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
-//
-// }
-
+const onViewFinished = function(event) {
+  event.preventDefault()
+  api.viewFinished()
+  .then(ui.onViewFinishedSuccess)
+  .catch(ui.onViewFinishedFailure)
+}
+const onViewUnfinished = function(event) {
+  event.preventDefault()
+  api.viewUnfinished()
+  .then(ui.onViewUnfinishedSuccess)
+  .catch(ui.onViewUnfinishedFailure)
+}
 
 
 
 
 module.exports = {
-  onStartGame,
   onUpdateGame,
-  onShowGame
+  onShowGame,
+  onStartGame,
+  onViewFinished,
+  onViewUnfinished
 }

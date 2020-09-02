@@ -1,6 +1,14 @@
 'use strict'
 const store = require('./../store')
 
+if (store.user === null) {
+$('#sign-out-form').hide()
+$('#start-game-button').hide()
+$('#view-complete-games').hide()
+$('#view-incomplete-games').hide()
+
+}
+
 const onSignUpSuccess = function(response) {
   $('#message').text('Thanks for signing up ' + response.user.email)
   $('#sign-up-form').trigger('reset')
@@ -13,10 +21,13 @@ const onSignInSuccess = function(response) {
   store.user = response.user
   $('#message').text('Sign in Successful ' + response.user.email)
   $('#sign-in-form').trigger('reset')
-  $('#change-pw-form').hide()
+  $('#change-pw-form').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#sign-out-form').show()
+  $('#start-game-button').show()
+  $('#view-complete-games').show()
+  $('#view-incomplete-games').show()
   //console.log('user data is: ',store.user)
 }
 const onSignInFailure = function(error) {
@@ -46,9 +57,13 @@ const onSignOutSuccess = function () {
   $('#sign-up-form').show()
   $('#sign-out-form').hide()
   $('#change-pw-form').hide()
-  $('.board').hide()
+  $('#view-complete-games').hide()
+  $('#view-incomplete-games').hide()
   //console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
+  //store.game = null
+  $('.container').hide()
+  $('#start-game-button').hide()
 }
 
 const onSignOutFailure = function (error) {
