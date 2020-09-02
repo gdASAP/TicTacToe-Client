@@ -8,6 +8,8 @@ const onStartGameSuccess = function (response) {
   $('#message').text('Game Started successfully')
   //console.log('response is: ', response)
   $('.container').show()
+  $('#playerMessage').text('')
+  $('#gameMessage').text('')
 }
 
 const onStartGameFailure = function (error) {
@@ -52,7 +54,7 @@ const onViewFinishedFailure = function (error) {
 }
 
 const onViewUnfinishedSuccess = function (response) {
- $('#message').text('Imported games successfully')
+ $('#message').text('Imported game history successfully')
  console.log('response is: ', response)
  store.unfinished = response.games
 // console.log(store.finished)
@@ -60,7 +62,7 @@ const onViewUnfinishedSuccess = function (response) {
 }
 
 const onViewUnfinishedFailure = function (error) {
- $('#message').text('Failed to import games')
+ $('#message').text('Failed to import game history')
 //  console.error('show Failure ran. Error is :', error)
 }
 

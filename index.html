@@ -10,10 +10,22 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script>
+       const load = () => {
+        $('#sign-out-form').hide()
+        $('#change-pw-form').hide()
+        $('#view-complete-games').hide()
+        $('#view-incomplete-games').hide()
+        $('.container').hide()
+        $('#start-game-button').hide()
+      }
+      window.onload = load;
+      </script>
     </head>
     <body>
       <h1>Welcome to Solo TicTacToe</h1>
-      <h3>Play against yourself. You know the rules.</h3>
+      <h3>Play against yourself. Select for X, then O.</h3>
+        <h4>But first...sign up or sign in</h4>
   <p id='message'></p>
     <section>
       <form id="sign-up-form">

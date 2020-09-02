@@ -2,7 +2,9 @@
 
 @import '~bootstrap/scss/bootstrap';
 
-
+body {
+  background-color: #D3D3D3;
+}
 
 .container {
 // set the board container to take up 100% of the viewport's height
@@ -63,7 +65,7 @@ height: 100vh;
   }
 
   &:hover {
-    background-color: LightSteelBlue;
+    background-color: #ADD8E6;
     cursor: pointer;
   }
 }

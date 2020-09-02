@@ -59,6 +59,8 @@ const onSignOutSuccess = function () {
   $('#change-pw-form').hide()
   $('#view-complete-games').hide()
   $('#view-incomplete-games').hide()
+  $('#playerMessage').text('')
+  $('#gameMessage').text('')
   //console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
   //store.game = null
