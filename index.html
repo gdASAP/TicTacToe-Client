@@ -10,18 +10,8 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <script type="text/javascript">
-       const load = () => {
-        $('#sign-out-form').hide()
-        $('#change-pw-form').hide()
-        $('#view-complete-games').hide()
-        $('#view-incomplete-games').hide()
-        $('.container').hide()
-        $('#start-game-button').hide()
-      }
-      window.onload = load;
-      </script>
-    </head>
+
+      </head>
     <body>
       <h1>Welcome to Solo TicTacToe</h1>
       <h3>Play against yourself. Select for X, then O.</h3>
@@ -79,19 +69,19 @@
               </fieldset>
             </form>
           </section>
-          <section>
+          <!-- <section>
             <form id="view-complete-games">
               <fieldset>
-                <!-- <legend>Start game</legend> -->
-                <input type="submit" value="Finished Games">
+                <legend>Start game</legend> -->
+                <!-- <input type="submit" value="Finished Games">
               </fieldset>
             </form>
-          </section>
+          </section> -->
           <section>
-            <form id="view-incomplete-games">
+            <form id="view-games">
               <fieldset>
                 <!-- <legend>Start game</legend> -->
-                <input type="submit" value="Unfinished Games">
+                <input type="submit" value="View Games">
               </fieldset>
             </form>
           </section>

@@ -2,7 +2,17 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('./../store')
-const gameplay = require('./gameplay')
+
+const onPageLoad = function (event) {
+  //console.log('window is loaded')
+  $('#sign-out-form').hide()
+  $('#change-pw-form').hide()
+  $('.container').hide()
+  $('#start-game-button').hide()
+  $('#view-games').hide()
+}
+
+
 
 const onStartGame = function (event) {
  event.preventDefault()
@@ -26,7 +36,7 @@ api.startGame()
 
 const onUpdateGame = function (event) {
  event.preventDefault()
- console.log('Player Move Made')
+// console.log('Player Move Made')
 api.updateGame()
 .then(ui.onUpdateGameSuccess)
 .catch(ui.onUpdateGameFailure)
@@ -40,17 +50,11 @@ const onShowGame = function(event) {
   .catch(ui.onShowGameFailure)
 }
 
-const onViewFinished = function(event) {
+const onViewGames = function(event) {
   event.preventDefault()
-  api.viewFinished()
-  .then(ui.onViewFinishedSuccess)
-  .catch(ui.onViewFinishedFailure)
-}
-const onViewUnfinished = function(event) {
-  event.preventDefault()
-  api.viewUnfinished()
-  .then(ui.onViewUnfinishedSuccess)
-  .catch(ui.onViewUnfinishedFailure)
+  api.viewGames()
+  .then(ui.onViewGamesSuccess)
+  .catch(ui.onViewGamesFailure)
 }
 
 
@@ -60,6 +64,6 @@ module.exports = {
   onUpdateGame,
   onShowGame,
   onStartGame,
-  onViewFinished,
-  onViewUnfinished
+  onViewGames,
+  onPageLoad
 }

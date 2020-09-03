@@ -26,9 +26,8 @@ const onSignInSuccess = function(response) {
   $('#sign-up-form').hide()
   $('#sign-out-form').show()
   $('#start-game-button').show()
-  $('#view-complete-games').show()
-  $('#view-incomplete-games').show()
-  //console.log('user data is: ',store.user)
+  $('#view-games').show()
+    //console.log('user data is: ',store.user)
 }
 const onSignInFailure = function(error) {
 $('#message').text('Sign in failed. Try again ')
@@ -38,6 +37,7 @@ const onChangePwSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#change-pw-form').trigger('reset')
   //console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
@@ -57,8 +57,7 @@ const onSignOutSuccess = function () {
   $('#sign-up-form').show()
   $('#sign-out-form').hide()
   $('#change-pw-form').hide()
-  $('#view-complete-games').hide()
-  $('#view-incomplete-games').hide()
+  $('#view-games').hide()
   $('#playerMessage').text('')
   $('#gameMessage').text('')
   //console.log('signOutSuccess ran and nothing was returned!')

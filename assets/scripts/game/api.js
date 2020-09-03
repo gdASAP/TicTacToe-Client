@@ -36,7 +36,7 @@ const startGame = function (data) {
 }
 
 
-let currentPlayer = 'X'
+let currentPlayer = ''
 let currentIndex = ''
 //store.newGame = true
 let callUpdate = false
@@ -63,15 +63,10 @@ api.startGame()
 
 // Our box click event handler
 const onBoxClick = function (event) {
-  // Select the box id that was clicked, event.target
-  //change player
-   //currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
   const box = $(event.target)
-  // Then set the text to the current player
   currentIndex = `${event.target.id}`
   if (store.newGame) {
-    //add this for messaging
-    //  $('#gameMessage').text(`Player ` + `${currentPlayer}` + ` Make a selection.`)
+    currentPlayer = 'X'
     box.text(currentPlayer)
     store.newGame = false
     endOfGame = false
@@ -85,14 +80,11 @@ const onBoxClick = function (event) {
   }
   //console.log('index is: ', currentIndex, 'current player: ', currentPlayer)
 if (callUpdate) {
-
   updateGame()
     .then(ui.onUpdateGameSuccess)
     .then(gameOverCheck)
     .catch(ui.onUpdateGameFailure)
-
-//gameOverCheck()
-  //  currentPlayer = currentPlayer === 'O' ? '✕' : 'O'
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
 } else {
   if(!endOfGame) {
   $('#gameMessage').text('Invalid move. Try again')
@@ -101,7 +93,7 @@ if (callUpdate) {
 }
 }
 //gameOverCheck()
-currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
+//currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
 $('#playerMessage').text(`Player ${currentPlayer}, it's your turn.`)
 if(endOfGame || store.newGame){
 $('#playerMessage').text('')
@@ -159,7 +151,7 @@ if (cellArray[0].symbol === cellArray[1].symbol &&
   cellArray[0].symbol !=='') {
   endOfGame = true
     updateGame()
-  $('#gameMessage').text(`Game over. Player ${cellArray[0].symbol} WINS!`)
+    $('#gameMessage').text(`Game over. Player ${cellArray[0].symbol} WINS!`)
   $('#playerMessage').text('')
 } else if (cellArray[3].symbol === cellArray[4].symbol &&
     cellArray[3].symbol === cellArray[5].symbol &&
@@ -210,7 +202,7 @@ if (cellArray[0].symbol === cellArray[1].symbol &&
 }
   // Game API
     const showGame = function () {
-  console.log('show game API called', store.game._id)
+  //console.log('show game API called', store.game._id)
       return $.ajax({
         url: config.apiUrl + '/games/' + store.game._id,
         method:'GET',
@@ -221,28 +213,15 @@ if (cellArray[0].symbol === cellArray[1].symbol &&
 
 }
 
-const viewFinished = function () {
+const viewGames = function () {
 //console.log('show finished games')
   return $.ajax({
-    url: config.apiUrl + '/games/?over=true',
+    url: config.apiUrl + '/games/',
     method:'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
-
-}
-
-const viewUnfinished = function () {
-//console.log('show finished games')
-  return $.ajax({
-    url: config.apiUrl + '/games/?over=false',
-    method:'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-
 }
 
 //$('#playerMessage').text('')
@@ -257,6 +236,5 @@ const viewUnfinished = function () {
   onBoxClick,
   gameOverCheck,
   onStartGame,
-  viewFinished,
-  viewUnfinished
+  viewGames
   }

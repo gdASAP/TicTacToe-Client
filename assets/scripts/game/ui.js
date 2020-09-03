@@ -40,31 +40,20 @@ const onShowGameFailure = function (error) {
 //console.error('show Failure ran. Error is :', error)
 }
 
-const onViewFinishedSuccess = function (response) {
-  $('#message').text('Game Shown successfully')
-  console.log('response is: ', response)
-  store.finished = response.games
+const onViewGamesSuccess = function (response) {
+  $('#message').text('Game History Shown successfully')
+//  console.log('response is: ', response)
+  store.view = response.games
+  $('#gameMessage').text(`You have played ${store.view.length} games` )
   //console.log(store.finished)
 
 }
 
-const onViewFinishedFailure = function (error) {
-  $('#message').text('Board failed to show')
+const onViewGamesFailure = function (error) {
+  $('#message').text('Game History failed to show')
 //  console.error('show Failure ran. Error is :', error)
 }
 
-const onViewUnfinishedSuccess = function (response) {
- $('#message').text('Imported game history successfully')
- console.log('response is: ', response)
- store.unfinished = response.games
-// console.log(store.finished)
-
-}
-
-const onViewUnfinishedFailure = function (error) {
- $('#message').text('Failed to import game history')
-//  console.error('show Failure ran. Error is :', error)
-}
 
 
 module.exports = {
@@ -74,8 +63,6 @@ onUpdateGameSuccess,
 onUpdateGameFailure,
 onShowGameSuccess,
 onShowGameFailure,
-onViewFinishedFailure,
-onViewUnfinishedFailure,
-onViewFinishedSuccess,
-onViewUnfinishedSuccess
+onViewGamesSuccess,
+onViewGamesFailure
 }
