@@ -62,6 +62,7 @@ const onSignOutSuccess = function () {
   $('#gameMessage').text('')
   //console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
+
   //store.game = null
   $('.container').hide()
   $('#start-game-button').hide()
