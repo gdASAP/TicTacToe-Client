@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Solo TicTacToe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      </head>
+    <body>
+      <h1>Welcome to Solo TicTacToe</h1>
+      <h3>Play against yourself. Select for X, then O.</h3>
+        <h4>But first...sign up or sign in</h4>
+  <p id='message'></p>
+    <section>
+      <form id="sign-up-form">
+        <fieldset>
+          <!-- <legend>Sign up!</legend> -->
+          <input type="text" placeholder="Email" name="credentials[email]">
+          <input type="password" placeholder="Password" name="credentials[password]">
+          <input type="password" placeholder="Confirm Password" name="credentials[password_confirmation]">
+          <input type="submit" value="Sign Up">
+        </fieldset>
+      </form>
+    </section>
+
+
+      <section>
+        <form id="sign-in-form">
+          <fieldset>
+            <!-- <legend>Sign in!</legend> -->
+            <input type="text" placeholder="Email" name="credentials[email]">
+            <input type="password" placeholder="Password" name="credentials[password]">
+            <input type="submit" value="Sign In">
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- <section>
+        <form id="manage-account-button">
+          <fieldset>
+            <input type="submit" value="Manage Account">
+          </fieldset>
+        </form>
+      </section> -->
+
+        <section>
+          <form id="change-pw-form">
+            <fieldset>
+              <!-- <legend>Change Password!</legend> -->
+              <input type="password" placeholder="Old Password" name="passwords[old]">
+              <input type="password" placeholder="New Password" name="passwords[new]">
+              <input type="submit" value="Update PW">
+            </fieldset>
+          </form>
+        </section>
+
+
+          <section>
+            <form id="sign-out-form">
+              <!-- <fieldset>
+                <legend>Sign Out!</legend> -->
+                <input type="submit" value="Sign Out">
+              </fieldset>
+            </form>
+          </section>
+          <!-- <section>
+            <form id="view-complete-games">
+              <fieldset>
+                <legend>Start game</legend> -->
+                <!-- <input type="submit" value="Finished Games">
+              </fieldset>
+            </form>
+          </section> -->
+          <section>
+            <form id="view-games">
+              <fieldset>
+                <!-- <legend>Start game</legend> -->
+                <input type="submit" value="View Games">
+              </fieldset>
+            </form>
+          </section>
+<!-- <p id='playerStatsMessage'></p> -->
+          <section>
+            <form id="start-game-button">
+              <fieldset>
+                <!-- <legend>Start game</legend> -->
+                <input type="submit" value="Start Game">
+              </fieldset>
+            </form>
+          </section>
+
+    <p id='gameMessage'></p>
+    <p id='playerMessage'></p>
+
+        <section>
+          <div class="board">
+            <div data-cell-index="0"></div>
+          </div>
+        </section>
+
+
+
+
+        <div class="container">
+            <!-- Row and board are two different classes defined on the same line-->
+            <div class="row board h-100">
+                <div class="col-4 box" id="0"></div>
+                <div class="col-4 box" id="1"></div>
+                <div class="col-4 box" id="2"></div>
+                <div class="col-4 box" id="3"></div>
+                <div class="col-4 box" id="4"></div>
+                <div class="col-4 box" id="5"></div>
+                <div class="col-4 box" id="6"></div>
+                <div class="col-4 box" id="7"></div>
+                <div class="col-4 box" id="8"></div>
+            </div>
+          </div>
+          </container>
+
+    </body>
+</html>
